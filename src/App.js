@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const businesses = {
+    img: "https://s3-media4.fl.yelpcdn.com/bphoto/0YVZcJY1cQwYcBQmGwY6Dg/o.jpg",
+    name: "Pizza Hut",
+    address: "123 Main St",
+    city: "San Francisco",
+    state: "CA",
+    zip: "94102",
+    category: "Pizza",
+    rating: 4.5,
+    reviews: 100
 }
 
-export default App;
+function Business() {
+    return (
+        <div className="Business">
+            <img src={businesses.img} alt={businesses.name}/>
+            <h2>{businesses.name}</h2>
+            <p>{businesses.address}</p>
+            <p>{businesses.city}, {businesses.state} {businesses.zip}</p>
+            <p>{businesses.category}</p>
+            <p>{businesses.rating} stars ({businesses.reviews} reviews)</p>
+        </div>
+    );
+}
+
+export default Business;
